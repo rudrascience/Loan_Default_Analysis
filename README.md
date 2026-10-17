@@ -1,4 +1,4 @@
-# 10 · Loan Default Analysis
+# Loan Default Analysis
 
 **Module:** Statistics and EDA (Python: pandas, seaborn, scipy, statsmodels)  **Dataset:** [Loan Default Prediction Dataset (Kaggle, nikhil1e9)](https://www.kaggle.com/datasets/nikhil1e9/loan-default)  **Column profile:** [DATA_PROFILE.md](DATA_PROFILE.md)
 
