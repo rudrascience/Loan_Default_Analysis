@@ -118,3 +118,52 @@ Also give a 95% confidence interval for the default rate of each risk segment (`
 ## 8. Deliverables
 
 `loan_default_eda.ipynb` (cleaning → EDA → tests table → segmentation) and a 1-page credit-policy recommendation.
+
+# CREDIT POLICY RECOMMENDATION REPORT
+
+### 1. Executive Summary
+Based on empirical evidence derived from our active portfolio of 255,347 loans (portfolio baseline default rate of **11.61%** as analyzed), we propose an immediate transition from traditional score-card rules to structured risk-flag constraints. These recommendations balance target profitability against underwriting risk to dramatically reduce overall defaults while maintaining business viability.
+
+---
+
+### 2. Foundational Policy Directives (Empirically Calibrated)
+
+#### A. Mitigate Younger Cohort Risk via Structured Surcharges
+*   **Finding:** Defaulters have a lower mean age of **36.56 years** compared to non-defaulters at **44.41 years** ($p < 0.01$). This difference is highly significant and has a moderate effect size (Cohen's $d = -0.53$).
+*   **Policy Rule:** Enforce an automated **1.5% to 2.5% interest rate risk-premium** on standard loan pricing for any applicant under **35 years old** to offset active demographic risk.
+
+#### B. Cap Maximum Leverage to Prevent Debt Overload 
+*   **Finding:** Point-biserial correlation indicates that the Loan-to-Income (LTI) ratio is the strongest numeric linear predictor of default status ($\rho = 0.179, p < 0.01$).
+*   **Policy Rule:** Establish a hard underwriting ceiling restricting standard LTI ratios to **3.0x**. Applications exceeding this ratio must undergo manual secondary review or require a qualified co-signer.
+
+#### C. Structured Incentives for Co-Signer Backing
+*   **Finding:** Borrowers without a co-signer represent a higher-risk category with a **12.87%** default rate, compared to **10.36%** for those with co-signers ($Z = -19.76, p < 0.01$).
+*   **Policy Rule:** Incentivize high-risk profiles to secure co-signers by offering an automatic **0.50% reduction in interest rate** if a qualified, credit-worthy co-signer is added to the contract.
+
+#### D. De-emphasize Raw Credit Scores in Automated Filters
+*   **Finding:** Although the Credit Score difference is statistically significant ($p < 0.01$), the actual mean difference is narrow (559.29 for defaulters vs 576.23 for non-defaulters) and the effect size is exceptionally small (Cohen's $d = -0.1067$).
+*   **Policy Rule:** Reduce the weighting of raw Bureau Credit Scores inside decision-engine scorecards. Shift weight toward cashflow capacity ratios (DTI, EMIToIncome) and employment stability metrics.
+
+#### E. Risk-Based Pricing Adjustments for Loan Purpose
+*   **Finding:** Current interest rates are flat across purposes (averaging ~13.5%). However, Chi-square testing reveals defaults are significantly associated with Loan Purpose ($p < 0.01$), with **Business loans** displaying the highest delinquency rates.
+*   **Policy Rule:** Implement a **1.0% risk-margin increase** for Business loans compared to lower-risk sectors (e.g., Home loans) to align pricing with actual class risk.
+
+---
+
+### 3. Underwriting Guardrail: The "Three-Strike" Auto-Decline Rule
+Our risk-flag segmentation analysis demonstrates that the default rate rises exponentially rather than linearly with risk indicators:
+*   **0 Flags:** 4.51% Default Rate  
+*   **1 Flag:** 7.71% Default Rate  
+*   **2 Flags:** 13.23% Default Rate  
+*   **3 Flags:** 22.95% Default Rate  
+*   **4 Flags:** 34.50% Default Rate  
+*   **5 Flags:** 52.90% Default Rate  
+
+**Risk-Flag Indicators:**  
+1. Age < 30  
+2. Interest Rate > 18%  
+3. Annual Income < $50,000  
+4. Months Employed < 24 months  
+5. Absence of a Co-signer  
+
+**Mandatory Underwriting Rule:** Any application triggering **3 or more of these 5 indicators must be auto-declined** by the decision engine. Under no circumstances may an underwriter manually override an applicant with $\ge 4$ active risk flags.
