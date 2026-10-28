@@ -119,6 +119,7 @@ Also give a 95% confidence interval for the default rate of each risk segment (`
 
 `loan_default_eda.ipynb` (cleaning → EDA → tests table → segmentation) and a 1-page credit-policy recommendation.
 
+---
 # CREDIT POLICY RECOMMENDATION REPORT
 
 ### 1. Executive Summary
