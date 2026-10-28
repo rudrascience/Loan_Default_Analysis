@@ -78,7 +78,7 @@ State H₀/H₁, use α = 0.05, and **report effect size**. With 255k rows almos
 
 | # | Hypothesis (H₀) | Test | Result | Effect size |
 |---|---|---|---|---|
-| 1 | Age is the same for defaulters and non-defaulters | Mann-Whitney U / Welch t | 36.6 vs 44.4 years, p ≈ 0 | **Cohen's d = −0.52 (medium)** |
+| 1 | Age is the same for defaulters and non-defaulters | Mann-Whitney U / Welch t | 36.6 vs 44.4 years, p ≈ 0 | **Cohen's d = −0.53 (medium)** |
 | 2 | Interest rate is the same | Mann-Whitney | 15.9% vs 13.2% | d = +0.41 |
 | 3 | Income is the same | Mann-Whitney | 71.8k vs 83.9k | d = −0.31 |
 | 4 | Months employed is the same | Mann-Whitney | 50 vs 61 months | d = −0.30 |
